@@ -1,0 +1,12 @@
+server:
+  port: 8020
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.7.18:8847
+        username: nacos
+        password: nacos
+        namespace: 7925dd54-2e11-40e1-9a38-42ff81c15169

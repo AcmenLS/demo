@@ -1,0 +1,13 @@
+server:
+  port: 8021
+spring:
+  application:
+    name: stock-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.7.18:8847
+        username: nacos
+        password: nacos
+        namespace: 7925dd54-2e11-40e1-9a38-42ff81c15169
+#        ephemeral: false  #永久实例   哪怕宕机了也不会删除实例，默认是 true，即表示临时实例
