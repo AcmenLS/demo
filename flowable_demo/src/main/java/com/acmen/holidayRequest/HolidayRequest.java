@@ -1,4 +1,4 @@
-package com.acmen;
+package com.acmen.holidayRequest;
 
 import org.flowable.engine.*;
 import org.flowable.engine.history.HistoricActivityInstance;
@@ -23,7 +23,8 @@ public class HolidayRequest {
         * 如果是在spring的配置中，使用 SpringProcessEngineConfiguration
         *
         * */
-        ProcessEngineConfiguration cfg = new StandaloneProcessEngineConfiguration().setJdbcUrl("jdbc:mysql://192.168.7.18:3306/flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8")
+        ProcessEngineConfiguration cfg = new StandaloneProcessEngineConfiguration()
+                .setJdbcUrl("jdbc:mysql://192.168.7.18:3306/flowable?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8")
                 .setJdbcUsername("root")
                 .setJdbcPassword("root")
                 .setJdbcDriver("com.mysql.jdbc.Driver")
@@ -36,7 +37,7 @@ public class HolidayRequest {
         // 使用 BPMN 2.0 定义 process。存储为 Xml，同时也是可以可视化的。
         RepositoryService repositoryService = processEngine.getRepositoryService();
         Deployment deployment =repositoryService.createDeployment()
-                .addClasspathResource("holiday-request.bpmn20.xml")
+                .addClasspathResource("processes/holiday-request.bpmn20.xml")
                 .deploy();
 
         ProcessDefinition processDefinition =repositoryService.createProcessDefinitionQuery()
